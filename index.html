@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>select image </div>
+<select>
+<button onclick="show_image('https://www.bing.com/images/search?view=detailV2&ccid=DLFbOVZ3&id=3E925924BE957E3D19A2FFE6E8756283679CF656&thid=OIF.I68DF8P45%2fjxLfeHqZjjbA&mediaurl=https%3a%2f%2ffleetworld.co.uk%2fwp-content%2fuploads%2f2021%2f03%2fLaptop1.jpg&exph=768&expw=1024&q=(function(window%2c+document)+%7b+%2f%2f+the+main+object+the+client+interacts+with.+window.spreadshirt+%3d+window.spreadshirt+%7c%7c+%7b%7d%3b+var+spreadshirt+%3d+window.spreadshirt%3b+spreadshirt.create+%3d+function(type%2c+options%2c+callback)+%7b+options+%3d+options+%7c%7c+%7b%7d%3b+callback+%3d+callback+%7c%7c+function()+%7b%7d%3b+designer(type.tolowercase()%2c+options%2c+callback)%3b+%7d%3b&simid=92129200378&ck=23AF0317C3F8E7F8F12DF787A998E36C&selectedIndex=1&FORM=IRPRST&ajaxhist=0',40,70,'emna')">click</button>
+<li></li>
+
+
+</select>
+<script>
+    function show_image(src, width, height, alt) {
+    var img = document.createElement("img");
+    img.src = src;
+    img.width = width;
+    img.height = height;
+    img.alt = alt;
+
+    // This next line will just add it to the <body> tag
+    document.li.appendChild(img);
+}
+</script>
+</body>
+</html>

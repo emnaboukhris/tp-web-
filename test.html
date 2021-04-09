@@ -1,0 +1,96 @@
+
+
+<!DOCTYPE HTML>  
+<html>  
+  
+<head>  
+    <title>  
+        How to create an image element 
+        dynamically using JavaScript ? 
+    </title>  
+
+    <style>
+input{
+background-color: transparent;
+font-size: large;
+}
+section{
+    background-color: blue;
+    padding: 30%;
+}
+
+    </style>    
+</head>  
+  
+<body id = "body" style = "text-align:center;">  
+      
+    <h1 style = "color:green;" >  
+        GeeksforGeeks  
+    </h1>  
+      
+    <p id = "GFG_UP" style = "font-size: 15px; font-weight: bold;">  
+    </p>  
+      
+    <button onclick = "GFG_Fun()">  
+        click here  
+    </button>  
+      <section id="limit"> you can only move here
+        <input type="text" id="drag"> 
+
+    </section>
+    <p id = "GFG_DOWN" style =  
+            "color:green; font-size: 20px; font-weight: bold;">  
+    </p>  
+    <script>  
+        var up = document.getElementById('GFG_UP');  
+        up.innerHTML = "Click on the button to add image element";  
+        var down = document.getElementById('GFG_DOWN');  
+          
+        function GFG_Fun() { 
+            var img = document.createElement('img'); 
+            img.src ='161605494_4005254046161939_5305419467080127846_n.jpg'; 
+            document.getElementById('limit').appendChild(img); 
+            down.innerHTML = "Image Element Added.";  
+        }  
+      
+        ball=document.getElementById("drag") ; 
+ball.onmousedown = function(event) {
+  // (1) prepare to moving: make absolute and on top by z-index
+  ball.style.position = 'absolute';
+  ball.style.zIndex = 1000;
+
+  // move it out of any current parents directly into body
+  // to make it positioned relative to the body
+  var lol =document.getElementById("limit"); 
+ // document.body.append(ball);
+document.body.append(ball);
+  // centers the ball at (pageX, pageY) coordinates
+  function moveAt(pageX, pageY) {
+    ball.style.left = pageX - ball.offsetWidth / 2 + 'px';
+    ball.style.top = pageY - ball.offsetHeight / 2 + 'px';
+  }
+
+  // move our absolutely positioned ball under the pointer
+  moveAt(event.pageX, event.pageY);
+
+  function onMouseMove(event) {
+    moveAt(event.pageX, event.pageY);
+  }
+
+  // (2) move the ball on mousemove
+  document.addEventListener('mousemove', onMouseMove);
+
+  // (3) drop the ball, remove unneeded handlers
+  ball.onmouseup = function() {
+    document.removeEventListener('mousemove', onMouseMove);
+    ball.onmouseup = null;
+  };
+
+}
+
+
+        
+    </script>  
+</body>  
+  
+</html> 
